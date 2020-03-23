@@ -1,19 +1,22 @@
 import React from 'react';
-import {render, fireEvent,wait} from '@testing-library/react';
+import {render,  waitFor} from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import {fetchShow as mockFetchShow} from './api/fetchShow';
-
-import Episodes from './components/Episodes';
+import {fetchShow as mockfetchShow} from './api/fetchShow';
 import App from './App';
-import MockData from './api/MockData';
+import {mockData} from './api/MockData';
+import { act } from 'react-dom/test-utils';
 
-test('app renders initially', ()=>{
-    render(<App/>);
-});
+
+
+test("initial render ", () => {
+  
+    render(<App />);
+  });
 
 test('app renders seasons on click', async () =>{
-const {getByTestId, getByText} = render(<App/>);
-await wait(()=>{
+   
+const { getByText} = render(<App/>);
+await waitFor(()=>{
     getByText(/select a season/i);
 });
 const dropDown=getByText(/select a season/i);

@@ -1,4 +1,4 @@
-const mockData= {
+const mockData= { data: {
 "id": 2993,
 "url": "http://www.tvmaze.com/shows/2993/stranger-things",
 "name": "Stranger Things",
@@ -595,5 +595,5 @@ const mockData= {
 }
 ]
 }
-}
+}}
 export default mockData;
